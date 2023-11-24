@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
-      <footer className="p-5 mt-12  absolute bottom-0 w-full text-center bg-black text-white">
+      <footer className="p-5 mt-12  w-full text-center bg-black text-white">
         <small>This website created by Foisal Programer</small>
       </footer>
     </>

@@ -9,6 +9,7 @@ import Homepage from './components/Homepage/Homepage';
 import About from './components/About/About';
 import Foods from './components/Foods/Foods';
 import Footer from './components/Footer/Footer';
+import FoodDetails from './components/FoodDetails/FoodDetails';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
           fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=fish'),
       },
       {
+        path: 'food/:foodId',
+        element: <FoodDetails></FoodDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.foodId}`
+          ),
+      },
+      {
         path: 'cocktails',
         element: <p>this is cocktails </p>,
       },
@@ -43,6 +52,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}></RouterProvider>
+    <Footer></Footer>
   </React.StrictMode>
 );
 
