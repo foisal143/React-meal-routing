@@ -10,6 +10,8 @@ import About from './components/About/About';
 import Foods from './components/Foods/Foods';
 import Footer from './components/Footer/Footer';
 import FoodDetails from './components/FoodDetails/FoodDetails';
+import Cocktails from './components/Cocktails/Cocktails';
+import CocktailsDetaisl from './CocktailDetails/CocktailsDetaisl';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -39,7 +41,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'cocktails',
-        element: <p>this is cocktails </p>,
+        element: <Cocktails></Cocktails>,
+        loader: () =>
+          fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'),
+      },
+      {
+        path: 'cocktails/:cocktailId',
+        element: <CocktailsDetaisl></CocktailsDetaisl>,
+        loader: ({ params }) =>
+          fetch(
+            `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${params.cocktailId}`
+          ),
       },
       {
         path: 'blog',
