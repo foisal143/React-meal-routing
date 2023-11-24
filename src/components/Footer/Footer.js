@@ -1,10 +1,13 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="p-5 absolute bottom-0 w-full text-center bg-black text-white">
-      <small>This website created by Foisal Programer</small>
-    </div>
+    <>
+      <footer className="p-5 mt-12  absolute bottom-0 w-full text-center bg-black text-white">
+        <small>This website created by Foisal Programer</small>
+      </footer>
+    </>
   );
 };
 

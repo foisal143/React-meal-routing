@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Homepage from './components/Homepage/Homepage';
 import About from './components/About/About';
+import Foods from './components/Foods/Foods';
+import Footer from './components/Footer/Footer';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,7 +24,9 @@ const router = createBrowserRouter([
       },
       {
         path: 'foods',
-        element: <p>this is products </p>,
+        element: <Foods></Foods>,
+        loader: () =>
+          fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=fish'),
       },
       {
         path: 'cocktails',

@@ -8,13 +8,14 @@ const Home = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="my-12">
+      <div className="my-12 text-center">
         {navigation.state === 'loading' ? (
           <span className="loading loading-infinity loading-lg"></span>
         ) : (
           ''
         )}
       </div>
+
       <Footer></Footer>
       <Outlet></Outlet>
     </>
