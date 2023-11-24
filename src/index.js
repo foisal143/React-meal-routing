@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import Cocktails from './components/Cocktails/Cocktails';
 import CocktailsDetaisl from './CocktailDetails/CocktailsDetaisl';
+import Blog from './Blog/Blog';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'blog',
-        element: <p>this is blog </p>,
+        element: <Blog></Blog>,
       },
     ],
   },
